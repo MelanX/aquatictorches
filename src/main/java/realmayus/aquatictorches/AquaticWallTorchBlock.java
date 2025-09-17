@@ -9,8 +9,8 @@ import com.google.common.collect.Maps;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -42,8 +42,8 @@ public class AquaticWallTorchBlock extends TorchBlock {
 
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-    public AquaticWallTorchBlock(Properties p_58123_, ParticleOptions p_58124_) {
-        super(p_58123_, p_58124_);
+    public AquaticWallTorchBlock(Properties p_58123_, SimpleParticleType p_58124_) {
+        super(p_58124_, p_58123_);
         this.registerDefaultState(this.getStateDefinition().any().setValue(WATERLOGGED, false).setValue(FLOWING_WATER, 8).setValue(FACING, Direction.NORTH));
     }
 

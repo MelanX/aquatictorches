@@ -29,8 +29,8 @@ public class AquaticTorches {
     private static final Logger LOGGER = LogManager.getLogger();
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, "aquatictorches");
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "aquatictorches");
-    public static final RegistryObject<AquaticTorchBlock> AQUATIC_TORCH = BLOCKS.register("aquatic_torch", () -> new AquaticTorchBlock(BlockBehaviour.Properties.copy(Blocks.TORCH).lightLevel(state -> 15), ParticleTypes.FLAME));
-    public static final RegistryObject<AquaticWallTorchBlock> AQUATIC_WALL_TORCH = BLOCKS.register("aquatic_wall_torch", () -> new AquaticWallTorchBlock(BlockBehaviour.Properties.copy(Blocks.TORCH).lightLevel(state -> 15).lootFrom(AQUATIC_TORCH), ParticleTypes.FLAME));
+    public static final RegistryObject<AquaticTorchBlock> AQUATIC_TORCH = BLOCKS.register("aquatic_torch", () -> new AquaticTorchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH).lightLevel(state -> 15), ParticleTypes.FLAME));
+    public static final RegistryObject<AquaticWallTorchBlock> AQUATIC_WALL_TORCH = BLOCKS.register("aquatic_wall_torch", () -> new AquaticWallTorchBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.TORCH).lightLevel(state -> 15).lootFrom(AQUATIC_TORCH), ParticleTypes.FLAME));
     public static final RegistryObject<StandingAndWallBlockItem> AQUATIC_TORCH_ITEM = ITEMS.register("aquatic_torch", () -> new StandingAndWallBlockItem(AQUATIC_TORCH.get(), AQUATIC_WALL_TORCH.get(), new Item.Properties(), Direction.DOWN));
 
     public AquaticTorches() {

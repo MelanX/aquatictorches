@@ -4,8 +4,8 @@ import javax.annotation.Nullable;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
@@ -27,8 +27,8 @@ public class AquaticTorchBlock extends TorchBlock implements SimpleWaterloggedBl
     public static final IntegerProperty FLOWING_WATER = IntegerProperty.create("water_level", 1, 8);
 
 
-    public AquaticTorchBlock(Properties properties, ParticleOptions particleOptions) {
-        super(properties, particleOptions);
+    public AquaticTorchBlock(Properties properties, SimpleParticleType particleOptions) {
+        super(particleOptions, properties);
         this.registerDefaultState(this.getStateDefinition().any().setValue(WATERLOGGED, false));
     }
 
